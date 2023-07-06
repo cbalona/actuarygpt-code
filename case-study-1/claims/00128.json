@@ -1,0 +1,27 @@
+{
+    "claim_id": "00128",
+    "policyholder_id": "P4572",
+    "incident_date": "2023-06-30",
+    "incident_location": "Cape Town, Western Cape, South Africa",
+    "incident_type": "Vehicle Theft",
+    "incident_description": "Policyholder Daffy Duck reports the theft of his vehicle, a red sports car. This is the third theft reported by Daffy within the last two months. Daffy claims that the vehicle was parked outside his house and was missing when he woke up in the morning.",
+    "communication_logs": [
+      {
+        "type": "Phone Call",
+        "date": "2023-06-30",
+        "transcript": "Policyholder: 'Hello, this is Daffy Duck. I can't believe this! My car has been stolen again! Third time in two months! It was parked right outside my house. I woke up this morning and it was gone!'"
+      },
+      {
+        "type": "Email",
+        "date": "2023-07-01",
+        "transcript": "Policyholder: 'This is ridiculous! How can my car be stolen three times? And from right outside my house! I demand immediate action on this claim! Regards, Daffy Duck.'"
+      }
+    ],
+    "additional_information": [
+      {
+        "type": "Police Report",
+        "content": "Incident Type: Vehicle Theft\nDate/Time: 2023-06-30, Reported at 8:00 AM\nLocation: Signal Hill Road, Cape Town, Western Cape, South Africa\n\nUpon arrival, Daffy Duck reported that his red sports car was missing from its parking spot outside his residence. This is the third time Mr. Duck has reported a vehicle theft in the past two months. No evidence of forced entry or vandalism at the scene.\n\nMr. Duck was advised to provide any possible additional information to the investigating team. He was also reminded to secure his vehicles more effectively.\n\nThe case has been forwarded to the department's auto theft division for further investigation."
+      }
+    ]
+  }
+  

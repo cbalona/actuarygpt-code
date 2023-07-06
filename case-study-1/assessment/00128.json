@@ -1,0 +1,11 @@
+{
+    "claim_id": "00128",
+    "policy_id": "P4572",
+    "fraud_likelihood": 2,
+    "reason_for_fraud_rating": "The claimant has reported multiple vehicle thefts within a short period of time, raising suspicions of possible fraud.",
+    "claimant_emotion": "frustrated",
+    "reason_for_emotion": "The claimant expresses frustration and disbelief at the repeated theft of their vehicle.",
+    "claim_summary": "The policyholder, Daffy Duck, reported the theft of his red sports car, which is the third theft within the last two months. The claimant claims the vehicle was parked outside his house and was missing when he woke up in the morning.",
+    "further_assessment_required": true,
+    "reason_for_further_assessment": "Further investigation is needed to determine if there are any suspicious circumstances surrounding the repeated thefts."
+}

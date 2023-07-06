@@ -1,0 +1,62 @@
+{
+    "treatyType": "Catastrophe Excess of Loss Reinsurance",
+    "insured": "GHI Insurance Company",
+    "reinsurer": "LMN Reinsurance Company",
+    "period": {
+        "start": "1st March 2023",
+        "end": "28th February 2024"
+    },
+    "lossLayers": [
+        {
+            "layer": 1,
+            "excessOf": 8000000,
+            "limit": 4000000,
+            "reinsuredPercent": 100
+        },
+        {
+            "layer": 2,
+            "excessOf": 12000000,
+            "limit": 8000000,
+            "reinsuredPercent": 90
+        },
+        {
+            "layer": 3,
+            "excessOf": 20000000,
+            "limit": 12000000,
+            "reinsuredPercent": 80
+        },
+        {
+            "layer": 4,
+            "excessOf": 32000000,
+            "limit": 16000000,
+            "reinsuredPercent": 70
+        },
+        {
+            "layer": 5,
+            "excessOf": 48000000,
+            "limit": 20000000,
+            "reinsuredPercent": 60
+        },
+        {
+            "layer": 6,
+            "excessOf": 68000000,
+            "limit": 24000000,
+            "reinsuredPercent": 50
+        }
+    ],
+    "interest": "Covers all lines of business of the Insured including Property, Liability, and Life.",
+    "sumInsured": 45000000,
+    "commission": {
+        "percent": 15,
+        "maxLossRatio": 65
+    },
+    "exclusions": [
+        "Hurricane risks",
+        "medical malpractice",
+        "product recall",
+        "political violence"
+    ],
+    "claimsNotification": 60,
+    "arbitrationClause": "Any dispute arising from this contract shall be settled by arbitration in accordance with the rules of the American Arbitration Association.",
+    "currency": "USD"
+}

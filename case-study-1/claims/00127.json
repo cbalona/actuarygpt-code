@@ -1,0 +1,30 @@
+{
+    "claim_id": "00127",
+    "policyholder_id": "P4571",
+    "incident_date": "2023-06-25",
+    "incident_location": "Durban, KwaZulu-Natal, South Africa",
+    "incident_type": "Car Accident",
+    "incident_description": "Policyholder Donald Duck reports a severe car accident involving his vehicle and another. Donald asserts that the incident occurred while he was driving at a perfectly safe speed, when the other driver recklessly zoomed into his lane, resulting in a massive collision.",
+    "communication_logs": [
+        {
+            "type": "Phone Call",
+            "date": "2023-06-25",
+            "transcript": "Policyholder: 'Hello! This is Donald Duck! I've just been in a terrible car accident! The other driver was a menace on the road, just barreled into my lane without a care in the world! I've never seen such reckless driving!'"
+        },
+        {
+            "type": "Email",
+            "date": "2023-06-26",
+            "transcript": "Policyholder: 'I demand immediate action on this claim! The other driver was a complete hazard and should be held fully responsible for the massive damage to my vehicle. I've attached pictures - the impact was so powerful, my car practically flew into the air! Regards, an extremely angry Donald Duck.'"
+        }
+    ],
+    "additional_information": [
+        {
+            "type": "Medical Report",
+            "content": "Patient: Donald Duck\nDate of Visit: 2023-06-26\nReason for Visit: Car Accident\n\nPatient presented with complaints of neck pain, back pain, and dizziness following a car accident. Patient states he was hit by another car that abruptly switched lanes.\n\nExamination revealed mild tenderness in the neck and back regions, but no visible injuries. X-rays of the cervical and lumbar spine were taken and showed no fractures.\n\nDiagnosis: Soft tissue injury\n\nPlan: The patient was advised to rest, avoid strenuous activities, and use over-the-counter pain medication. A follow-up appointment was scheduled for next week."
+        },
+        {
+            "type": "Police Report",
+            "content": "Incident Type: Car Accident\nDate/Time: 2023-06-25, 4:30 PM\nLocation: Florida Road, Durban, KwaZulu-Natal, South Africa\n\nUpon arrival, I observed two vehicles with side collision damage. Vehicle 1 (yellow sedan, driven by Donald Duck) had damage on the driver's side, and Vehicle 2 (red pickup truck, driven by Mickey Mouse) had front-end damage.\n\nDonald Duck stated that he was driving when Mickey Mouse suddenly zoomed into his lane and hit him. Mickey Mouse stated that he was driving normally when Donald Duck's car suddenly swerved in front of him.\n\nBoth drivers exchanged insurance information. No serious injuries were reported at the scene. Both vehicles were drivable and left the scene under their own power.\n\nNo citations were issued at the scene. Both drivers were advised to contact their insurance companies."
+        }
+    ]
+}

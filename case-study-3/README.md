@@ -1,0 +1,3 @@
+Code is not provided as the full code is verbose and not all of it is relevant to the paper (particularly the detailed API calls and frontend JavaScript code).
+
+However, creating such a knowledgebase has become significantly easier thanks to open-source contributions. We direct the reader to the [Vault-AI](https://github.com/pashpashpash/vault-ai) GitHub repository which provides a near full solution to the problem. One needs only to upload their required documents and provide the needed API keys.

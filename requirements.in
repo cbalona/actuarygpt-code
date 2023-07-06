@@ -1,0 +1,7 @@
+black
+ruff
+
+requests==2.31
+
+openai==0.27
+PyPDF2==3.0.1

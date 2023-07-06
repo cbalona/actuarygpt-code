@@ -1,0 +1,126 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "treatyType": {
+            "type": "string",
+            "description": "Type of reinsurance treaty"
+        },
+        "insured": {
+            "type": "string",
+            "description": "Name of the insurance company being insured"
+        },
+        "reinsurer": {
+            "type": "string",
+            "description": "Name of the reinsurance company providing coverage"
+        },
+        "period": {
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "string",
+                    "description": "Start date of the reinsurance period"
+                },
+                "end": {
+                    "type": "string",
+                    "description": "End date of the reinsurance period"
+                }
+            },
+            "required": [
+                "start",
+                "end"
+            ],
+            "description": "Period of reinsurance coverage"
+        },
+        "lossLayers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "layer": {
+                        "type": "integer",
+                        "description": "Layer number"
+                    },
+                    "excessOf": {
+                        "type": "integer",
+                        "description": "Excess amount triggering reinsurance coverage"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "Maximum coverage limit for the layer"
+                    },
+                    "reinsuredPercent": {
+                        "type": "integer",
+                        "description": "Percentage of loss reinsured for the layer"
+                    }
+                },
+                "required": [
+                    "layer",
+                    "excessOf",
+                    "limit",
+                    "reinsuredPercent"
+                ]
+            },
+            "description": "Information about the loss layers of the reinsurance contract"
+        },
+        "interest": {
+            "type": "string",
+            "description": "Coverage interest and lines of business"
+        },
+        "sumInsured": {
+            "type": "integer",
+            "description": "Total sum insured under the reinsurance contract"
+        },
+        "commission": {
+            "type": "object",
+            "properties": {
+                "percent": {
+                    "type": "integer",
+                    "description": "Commission percentage"
+                },
+                "maxLossRatio": {
+                    "type": "integer",
+                    "description": "Maximum loss ratio for commission calculation"
+                }
+            },
+            "required": [
+                "percent",
+                "maxLossRatio"
+            ],
+            "description": "Commission details"
+        },
+        "exclusions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of exclusions or risks not covered by the reinsurance"
+        },
+        "claimsNotification": {
+            "type": "integer",
+            "description": "Timeframe for claims notification in days"
+        },
+        "arbitrationClause": {
+            "type": "string",
+            "description": "Clause describing arbitration process"
+        },
+        "currency": {
+            "type": "string",
+            "description": "Currency used for the reinsurance contract"
+        }
+    },
+    "required": [
+        "treatyType",
+        "insured",
+        "reinsurer",
+        "period",
+        "lossLayers",
+        "interest",
+        "sumInsured",
+        "commission",
+        "exclusions",
+        "claimsNotification",
+        "arbitrationClause",
+        "currency",
+    ]
+}

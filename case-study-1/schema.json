@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "claim_id": {
+            "type": "string",
+            "description": "The claim number"
+        },
+        "policy_id": {
+            "type": "string",
+            "description": "The policy number"
+        },
+        "fraud_likelihood": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3,
+            "description": "The likelihood of the claim being fraudulent with 1 being low and 3 being high"
+        },
+        "reason_for_fraud_rating": {
+            "type": "string",
+            "description": "The reasoning behind the fraud rating"
+        },
+        "claimant_emotion": {
+            "type": "string",
+            "description": "The emotional state of the claimant"
+        },
+        "reason_for_emotion": {
+            "type": "string",
+            "description": "The reasoning behind determining the claimant's emotional state"
+        },
+        "claim_summary": {
+            "type": "string",
+            "description": "Summary of the claim based on the information provided"
+        },
+        "further_assessment_required": {
+            "type": "boolean",
+            "description": "Determine if further assessment is required"
+        },
+        "reason_for_further_assessment": {
+            "type": "string",
+            "description": "The reasoning behind the need for further assessment"
+        }
+    },
+    "required": [
+        "claim_id",
+        "policy_id",
+        "fraud_likelihood",
+        "reason_for_fraud_rating",
+        "claimant_emotion",
+        "reason_for_emotion",
+        "claim_summary",
+        "further_assessment_required",
+        "reason_for_further_assessment"
+    ]
+}

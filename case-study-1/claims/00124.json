@@ -1,0 +1,30 @@
+{
+    "claim_id": "00124",
+    "policyholder_id": "P4568",
+    "incident_date": "2023-06-29",
+    "incident_location": "Cape Town, Western Cape, South Africa",
+    "incident_type": "Car Accident",
+    "incident_description": "Policyholder Bugs Bunny reports a car accident involving his vehicle and another. According to Bugs, the incident occurred while he was stopped at a red light and the other driver collided into him from behind.",
+    "communication_logs": [
+        {
+            "type": "Phone Call",
+            "date": "2023-06-29",
+            "transcript": "Policyholder: 'Hello, my name is Bugs Bunny. I'm calling to report a car accident. I was stopped at a red light, and another car hit me from behind.'"
+        },
+        {
+            "type": "Email",
+            "date": "2023-06-30",
+            "transcript": "Policyholder: 'Dear Sir/Madam, I'm following up on my phone call yesterday. Attached are the pictures of the damage to my vehicle from the accident. Regards, Bugs Bunny.'"
+        }
+    ],
+    "additional_information": [
+        {
+            "type": "Medical Report",
+            "content": "Patient: Bugs Bunny\nDate of Visit: 2023-06-30\nReason for Visit: Car Accident\n\nPatient presented with complaints of back pain following a car accident. Patient states he was rear-ended yesterday and has had persistent pain since.\n\nExamination revealed tenderness in the lower back region. X-rays of the lumbar spine were taken and showed no fractures.\n\nDiagnosis: Soft tissue injury\n\nPlan: The patient was advised to rest and use over-the-counter pain medication. A follow-up appointment was scheduled for next week."
+        },
+        {
+            "type": "Police Report",
+            "content": "    "
+        }
+    ]
+}

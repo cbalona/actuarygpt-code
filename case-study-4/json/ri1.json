@@ -1,0 +1,62 @@
+{
+    "treatyType": "Catastrophe Excess of Loss Reinsurance",
+    "insured": "DEF Insurance Company",
+    "reinsurer": "PQR Reinsurance Company",
+    "period": {
+        "start": "1st July 2023",
+        "end": "30th June 2024"
+    },
+    "lossLayers": [
+        {
+            "layer": 1,
+            "excessOf": 12000000,
+            "limit": 6000000,
+            "reinsuredPercent": 100
+        },
+        {
+            "layer": 2,
+            "excessOf": 18000000,
+            "limit": 12000000,
+            "reinsuredPercent": 90
+        },
+        {
+            "layer": 3,
+            "excessOf": 30000000,
+            "limit": 18000000,
+            "reinsuredPercent": 80
+        },
+        {
+            "layer": 4,
+            "excessOf": 48000000,
+            "limit": 24000000,
+            "reinsuredPercent": 70
+        },
+        {
+            "layer": 5,
+            "excessOf": 72000000,
+            "limit": 30000000,
+            "reinsuredPercent": 60
+        },
+        {
+            "layer": 6,
+            "excessOf": 102000000,
+            "limit": 36000000,
+            "reinsuredPercent": 50
+        }
+    ],
+    "interest": "Covers all lines of business of the Insured including Property, Liability, and Aviation.",
+    "sumInsured": 80000000,
+    "commission": {
+        "percent": 18,
+        "maxLossRatio": 75
+    },
+    "exclusions": [
+        "Earthquake risks",
+        "aviation accidents",
+        "labor strikes",
+        "financial market losses"
+    ],
+    "claimsNotification": 45,
+    "arbitrationClause": "Any dispute arising from this contract shall be settled by arbitration in accordance with the rules of the International Chamber of Commerce.",
+    "currency": "EUR"
+}

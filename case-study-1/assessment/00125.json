@@ -1,0 +1,11 @@
+{
+    "claim_id": "00125",
+    "policy_id": "P4569",
+    "fraud_likelihood": 1,
+    "reason_for_fraud_rating": "There is no indication of fraud in the provided information.",
+    "claimant_emotion": "Distressed",
+    "reason_for_emotion": "The claimant describes the accident as horrifying and expresses shock and relief that they are still alive.",
+    "claim_summary": "Policyholder Sylvester Cat reports a dramatic car accident where his stationary vehicle was hit from behind with such force that it spun around.",
+    "further_assessment_required": true,
+    "reason_for_further_assessment": "Further assessment is required to verify the extent of damages, evaluate the injuries, and assess fault for the accident."
+}

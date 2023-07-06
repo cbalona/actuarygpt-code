@@ -1,0 +1,62 @@
+{
+    "treatyType": "Catastrophe Excess of Loss Reinsurance",
+    "insured": "JKL Insurance Company",
+    "reinsurer": "RST Reinsurance Company",
+    "period": {
+        "start": "1st May 2023",
+        "end": "30th April 2024"
+    },
+    "lossLayers": [
+        {
+            "layer": 1,
+            "excessOf": 15000000,
+            "limit": 7500000,
+            "reinsuredPercent": 100
+        },
+        {
+            "layer": 2,
+            "excessOf": 22500000,
+            "limit": 15000000,
+            "reinsuredPercent": 90
+        },
+        {
+            "layer": 3,
+            "excessOf": 37500000,
+            "limit": 22500000,
+            "reinsuredPercent": 80
+        },
+        {
+            "layer": 4,
+            "excessOf": 60000000,
+            "limit": 30000000,
+            "reinsuredPercent": 70
+        },
+        {
+            "layer": 5,
+            "excessOf": 90000000,
+            "limit": 37500000,
+            "reinsuredPercent": 60
+        },
+        {
+            "layer": 6,
+            "excessOf": 127500000,
+            "limit": 45000000,
+            "reinsuredPercent": 50
+        }
+    ],
+    "interest": "Covers all lines of business of the Insured including Property, Liability, and Health.",
+    "sumInsured": 100000000,
+    "commission": {
+        "percent": 17,
+        "maxLossRatio": 70
+    },
+    "exclusions": [
+        "Flood risks",
+        "professional liability",
+        "construction projects",
+        "currency exchange losses"
+    ],
+    "claimsNotification": 30,
+    "arbitrationClause": "Any dispute arising from this contract shall be settled by arbitration in accordance with the rules of the London Court of International Arbitration.",
+    "currency": "GBP"
+}

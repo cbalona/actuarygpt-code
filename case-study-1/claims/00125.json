@@ -1,0 +1,30 @@
+{
+    "claim_id": "00125",
+    "policyholder_id": "P4569",
+    "incident_date": "2023-06-15",
+    "incident_location": "Johannesburg, Gauteng, South Africa",
+    "incident_type": "Car Accident",
+    "incident_description": "Policyholder Sylvester Cat reports a dramatic car accident involving his vehicle and another. Sylvester claims that the incident occurred while he was stationary at a red light when the other driver collided into him with such force that his vehicle spun around.",
+    "communication_logs": [
+        {
+            "type": "Phone Call",
+            "date": "2023-06-15",
+            "transcript": "Policyholder: 'Hello, my name is Sylvester Cat. I'm calling to report a horrifying car accident. I was sitting quietly at a red light, then BAM! This other car slams into me from behind so hard my car spun around in circles!'"
+        },
+        {
+            "type": "Email",
+            "date": "2023-06-16",
+            "transcript": "Policyholder: 'Dear Sir/Madam, this is Sylvester Cat. I'm still shaking from the accident yesterday. I've attached pictures of the damage - it's extensive! The force of the impact spun my car around! It's a miracle I'm still here. Regards, Sylvester Cat.'"
+        }
+    ],
+    "additional_information": [
+        {
+            "type": "Medical Report",
+            "content": "Patient: Sylvester Cat\nDate of Visit: 2023-06-16\nReason for Visit: Car Accident\n\nPatient presented with complaints of headache, dizziness, and back pain following a car accident. Patient states he was rear-ended yesterday and the impact caused his car to spin around.\n\nExamination revealed tenderness in the lower back region and the patient appeared visibly shaken. X-rays of the cervical and lumbar spine were taken and showed no fractures.\n\nDiagnosis: Whiplash injury, mild concussion\n\nPlan: The patient was advised to rest, use over-the-counter pain medication and avoid driving. A follow-up appointment was scheduled for next week."
+        },
+        {
+            "type": "Police Report",
+            "content": "Incident Type: Car Accident\nDate/Time: 2023-06-15, 12:00 PM\nLocation: William Nicol Drive, Johannesburg, Gauteng, South Africa\n\nUpon arrival, I observed two vehicles with rear-end collision damage. Vehicle 1 (black sedan, driven by Sylvester Cat) had front-end damage, and Vehicle 2 (white van, driven by Tweety Bird) had rear-end damage.\n\nSylvester Cat stated that he was stopped at the red light when Tweety Bird hit him from behind causing his car to spin around. Tweety Bird stated that he didn't notice the light had turned red and the traffic had stopped.\n\nBoth drivers exchanged insurance information. No serious injuries were reported at the scene. Both vehicles were drivable and left the scene under their own power.\n\nNo citations were issued at the scene. Both drivers were advised to contact their insurance companies."
+        }
+    ]
+}
