@@ -11,79 +11,25 @@ ASSESSMENT_DIR: Path = Path.cwd() / "assessment"
 ASSESSMENT_DIR.mkdir(parents=True, exist_ok=True)
 
 SYSTEM_PROMPT: str = """
-    You are a system that extracts information from claims reporting interactions 
-    and inserts this information into JSON files. Use the following schema strictly
-    to convert the information provided into JSON format. The user will
-    provide the interaction and you will use it to:
-    1. Extract the claim number (claim_id)
-    2. Extract the policy number (policy_id)
-    3. Rate the likelihood of the claim being fraudulent with 1 being low and 3
-    being high (fraud_likelihood) with reasoning (fraud_likelihood_reasoning)
-    4. Determine the emotional state of the claimant (claimant_emotion) with reasoning
-    (claimant_emotion_reasoning)
-    5. Summarise the claim based on the information provided (claim_summary)
-    6. Determine if further assessment is required (further_assessment_required)
-    with reasoning (further_assessment_reasoning)
+You are a system that extracts information from claims reporting interactions 
+and inserts this information into JSON files. Use the following schema strictly 
+to convert the information provided into JSON format. The user will provide the 
+interaction and you will use it to:
 
-    Schema:
+Extract the claim number (claim_id)
+Extract the policy number (policy_id)
+Identify any inconsistencies in the information. For example, a police report 
+indicating brake marks, but the claimaint indicating they were stationary. (inconsistencies)  
+Determine the emotional state of the claimant (claimant_emotion) with 
+supporting information (claimant_emotion_reasoning)
+Summarise the claim based on the information provided (claim_summary)
+Determine if further assessment is required (further_assessment_required) 
+with supporting information (further_assessment_reasoning)
 
-    {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-            "claim_id": {
-                "type": "string",
-                "description": "The claim number"
-            },
-            "policy_id": {
-                "type": "string",
-                "description": "The policy number"
-            },
-            "fraud_likelihood": {
-                "type": "integer",
-                "minimum": 1,
-                "maximum": 3,
-                "description": "The likelihood of the claim being fraudulent with 1 being low and 3 being high"
-            },
-            "reason_for_fraud_rating": {
-                "type": "string",
-                "description": "The reasoning behind the fraud rating"
-            },
-            "claimant_emotion": {
-                "type": "string",
-                "description": "The emotional state of the claimant"
-            },
-            "reason_for_emotion": {
-                "type": "string",
-                "description": "The reasoning behind determining the claimant's emotional state"
-            },
-            "claim_summary": {
-                "type": "string",
-                "description": "Summary of the claim based on the information provided"
-            },
-            "further_assessment_required": {
-                "type": "boolean",
-                "description": "Determine if further assessment is required"
-            },
-            "reason_for_further_assessment": {
-                "type": "string",
-                "description": "The reasoning behind the need for further assessment"
-            }
-        },
-        "required": [
-            "claim_id",
-            "policy_id",
-            "fraud_likelihood",
-            "reason_for_fraud_rating",
-            "claimant_emotion",
-            "reason_for_emotion",
-            "claim_summary",
-            "further_assessment_required",
-            "reason_for_further_assessment"
-        ]
-    }
+Provide only the valid json output and nothing else.
 
-    """  # noqa: E501
+Schema:
+"""  # noqa: E501
 
 
 # get env vars
@@ -94,15 +40,15 @@ def get_env_variable(name: str) -> str:
     return value
 
 
-def assess_claim(text: str) -> dict:
-    prompt: str = f"Claim: {text}"
+def assess_claim(system_prompt: str, claim_context: str) -> dict:
+    prompt: str = f"Claim: {claim_context}"
 
     gpt_response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0613",
+        model="gpt-4",
         messages=[
             {
                 "role": "user",
-                "content": SYSTEM_PROMPT,
+                "content": system_prompt,
             },
             {"role": "user", "content": prompt},
         ],
@@ -112,15 +58,21 @@ def assess_claim(text: str) -> dict:
 
 
 def main() -> None:
+    # read json as raw string
+    with open("schema.json", "r") as file:
+        SCHEMA: str = file.read()
+
+    system_prompt = f"{SYSTEM_PROMPT}{SCHEMA}"
+
     OPENAI_API_KEY: str = get_env_variable("OPENAI_API_KEY")
 
     openai.api_key = OPENAI_API_KEY
 
     for claim in (CLAIMS_DIR).iterdir():
         with open(claim, "r") as file:
-            claim_data: str = file.read()
+            claim_context: str = file.read()
 
-        assessment_json: str = assess_claim(claim_data)
+        assessment_json: str = assess_claim(system_prompt, claim_context)
 
         with open(ASSESSMENT_DIR / f"{claim.stem}.json", "w") as file:
             json.dump(assessment_json, file, indent=4)

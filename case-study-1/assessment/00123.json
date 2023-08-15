@@ -1,11 +1,10 @@
 {
     "claim_id": "00123",
     "policy_id": "P4568",
-    "fraud_likelihood": 1,
-    "reason_for_fraud_rating": "No suspicious activity or conflicting information found",
+    "inconsistencies": null,
     "claimant_emotion": "Distressed",
-    "reason_for_emotion": "Claimant reported persistent back pain and expressed concern about the damage to their vehicle",
-    "claim_summary": "Policyholder Bugs Bunny reported a car accident in which he was rear-ended while stopped at a red light. The incident resulted in back pain and damage to his vehicle.",
-    "further_assessment_required": false,
-    "reason_for_further_assessment": "No red flags or inconsistencies found in the claim"
+    "reason_for_emotion": "Claimant reported back pain following incident and is dealing with aftermath of accident",
+    "claim_summary": "Claimant Bugs Bunny was involved in a car accident where another driver collided into his vehicle from behind while he was stopped at a red light. Followed up with pictures of the damage and reported persistent back pain following incident. Medical reports confirmed a soft tissue injury.",
+    "further_assessment_required": true,
+    "reason_for_further_assessment": "Police report is absent. Also, further medical examinations may be necessary due to reported back pain."
 }

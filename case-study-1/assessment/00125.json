@@ -1,11 +1,10 @@
 {
     "claim_id": "00125",
     "policy_id": "P4569",
-    "fraud_likelihood": 1,
-    "reason_for_fraud_rating": "There is no indication of fraud in the provided information.",
-    "claimant_emotion": "Distressed",
-    "reason_for_emotion": "The claimant describes the accident as horrifying and expresses shock and relief that they are still alive.",
-    "claim_summary": "Policyholder Sylvester Cat reports a dramatic car accident where his stationary vehicle was hit from behind with such force that it spun around.",
+    "inconsistencies": "No inconsistencies found",
+    "claimant_emotion": "Shaken",
+    "reason_for_emotion": "Claimant Sylvester Cat has repeatedly expressed being shaken and still in shock after the accident.",
+    "claim_summary": "Sylvester Cat was involved in a car accident where another vehicle rear-ended him at a traffic light. The impact was such that it made his car spin around. Sylvester reported headaches, dizziness, and back pain following the accident. Medical reports confirmed a whiplash injury and mild concussion. No serious injuries were reported at the accident scene and both cars left under their own power.",
     "further_assessment_required": true,
-    "reason_for_further_assessment": "Further assessment is required to verify the extent of damages, evaluate the injuries, and assess fault for the accident."
+    "reason_for_further_assessment": "Given the nature of injuries reported by Sylvester (whiplash injury, mild concussion), a follow-up appointment with the medical facility has been scheduled. Pictures of vehicle damage have also been received, further assessment by adjusters is therefore necessary."
 }

@@ -1,11 +1,10 @@
 {
     "claim_id": "00128",
     "policy_id": "P4572",
-    "fraud_likelihood": 2,
-    "reason_for_fraud_rating": "The claimant has reported multiple vehicle thefts within a short period of time, raising suspicions of possible fraud.",
-    "claimant_emotion": "frustrated",
-    "reason_for_emotion": "The claimant expresses frustration and disbelief at the repeated theft of their vehicle.",
-    "claim_summary": "The policyholder, Daffy Duck, reported the theft of his red sports car, which is the third theft within the last two months. The claimant claims the vehicle was parked outside his house and was missing when he woke up in the morning.",
+    "inconsistencies": "No inconsistencies reported in the interaction.",
+    "claimant_emotion": "Frustrated",
+    "reason_for_emotion": "The claimant, Daffy Duck has expressed frustration over repeated thefts of his vehicle. 'I can't believe this! My car has been stolen again! Third time in two months!' in his phone call and 'This is ridiculous! How can my car be stolen three times?' in his email reflects his frustration over the recurring incidents.",
+    "claim_summary": "Policyholder Daffy Duck reported the theft of his vehicle, a red sports car, parked outside his residence in Cape Town. This is the third instance of theft reported by Daffy within the span of two months. The police report indicates no evidence of forced entry or vandalism at the scene and the case has been forwarded to the department's auto theft division for further investigation.",
     "further_assessment_required": true,
-    "reason_for_further_assessment": "Further investigation is needed to determine if there are any suspicious circumstances surrounding the repeated thefts."
+    "reason_for_further_assessment": "Given the frequency of the thefts reported by the policyholder, further assessment is required to establish any patterns and determine whether additional preventive measures or investigations are needed."
 }

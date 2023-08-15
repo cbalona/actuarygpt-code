@@ -1,17 +1,17 @@
 # Case Studies for ActuaryGPT: Applications of Large Language Models to Insurance and Actuarial Work
 
-This repository is a companion to the ActuaryGPT paper and consists of multiple case studies that utilize the OpenAI API and other libraries to perform various tasks. The paper is currently in draft form and will be released soon.
+This repository is a companion to the ActuaryGPT paper and consists of multiple case studies that utilize the OpenAI API and other libraries to perform various tasks.
 
 ## Case Study 1: Claims Reporting
 
-In this case study, we have used GPT 3.5 to parse engagements with policyholders during the claims process to determine the sentiment of the engagement, emotional state of the claimant, and provide a basic indicator of likelihood of fraud based on the information provided.
+In this case study, GPT 4 is used to parse engagements with policyholders during the claims process to determine the sentiment of the engagement, emotional state of the claimant, and identify any inconsistencies with the claim information.
 
-It is important to note that the LLM serves as an automation tool in this respect, and is not intended to replace human claims handlers, or to be the final decider in fraude or further
+It is important to note that the LLM serves as an automation tool in this respect, and is not intended to replace human claims handlers, or to be the final decider on fraud or further
 engagements. Rather, it is intended to provide a tool to assist claims handlers in their work by parsing the information provided by the claimant and providing a summary of the engagement and a set of indicators to guide further work.
 
 ## Case Study 2: Cybersecurity News Analysis
 
-In this case study we have used GPT 3.5 to summarise a collection of news snippets to identify emerging cyber risks. The script conducts an automated custom Google Search for recent articles using a list of search terms. It extracts the metadata of the search results and uses `GPT-3.5-turbo` to generate a detailed summary of the notable emerging cyber risks, themes, and trends identified.
+In this case study GPT 4 summarises a collection of news snippets to identify emerging cyber risks. The script conducts an automated custom Google Search for recent articles using a list of search terms. It extracts the metadata of the search results and uses `GPT-4` to generate a detailed summary of the notable emerging cyber risks, themes, and trends identified.
 
 ## Case Study 3: Regulatory Knowledgebase
 
@@ -31,7 +31,7 @@ to the vector embeddings of the regulatory documents and the most similar docume
 
 Reinsurance contracts are critical documents that are often lengthy and complex, making them time-consuming to analyze and understand, not to mention, exposing the insurer to significant risk if all contracts are not well understood.
 
-In this case study, we use LLMs to automate the process of extracting structured data from reinsurance contracts, such as the type of reinsurance, the reinsurer, the reinsured, the coverage period, and the premium amount. This structured data can then be used to populate a database or spreadsheet for further analysis.
+In this case study, an LLM is used to automate the process of extracting structured data from reinsurance contracts, such as the type of reinsurance, the reinsurer, the reinsured, the coverage period, and the premium amount. This structured data can then be used to populate a database or spreadsheet for further analysis.
 
 ## Prerequisites
 

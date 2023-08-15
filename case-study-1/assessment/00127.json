@@ -1,11 +1,10 @@
 {
     "claim_id": "00127",
     "policy_id": "P4571",
-    "fraud_likelihood": 1,
-    "reason_for_fraud_rating": "Based on the claimant's description of the incident and the supporting communication logs, there is no immediate indication of fraud.",
+    "inconsistencies": "The claimant Donald Duck states that the other driver moved into his lane causing the crash, whereas the other driver, Mickey Mouse, states that Donald's car suddenly swerved in front of him. It is unclear who initiated the collision.",
     "claimant_emotion": "Angry",
-    "reason_for_emotion": "The claimant expresses anger and frustration in both the phone call and email communication logs.",
-    "claim_summary": "Policyholder Donald Duck reports a severe car accident involving his vehicle and another. Donald asserts that the incident occurred while he was driving at a safe speed when the other driver recklessly zoomed into his lane, resulting in a massive collision. Medical and police reports support Donald's claim.",
-    "further_assessment_required": false,
-    "reason_for_further_assessment": "Based on the provided information and supporting reports, no further assessment is necessary at this time."
+    "reason_for_emotion": "The claimant has expressed frustration and anger in both phone call and email communication, demanding immediate action on his claim and placing blame completely on the other driver.",
+    "claim_summary": "Policyholder Donald Duck reported a severe car accident involving his vehicle and another driver's. Donald accuses the other driver of recklessly moving into his lane which resulted in a collision. Donald complained of neck and back pain, diagnosed as a soft tissue injury by his doctor. The police report notes each driver blaming the other for the incident. Both vehicles were able to leave the scene under their own power.",
+    "further_assessment_required": true,
+    "reason_for_further_assessment": "Given the varying accounts of the accident, further investigation is needed to determine who was at fault. Additionally, assessment can help determine whether the claim for medical expenses related to a soft tissue injury is justified."
 }

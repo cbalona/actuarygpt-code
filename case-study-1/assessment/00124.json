@@ -1,11 +1,10 @@
 {
     "claim_id": "00124",
     "policy_id": "P4568",
-    "fraud_likelihood": 1,
-    "reason_for_fraud_rating": "No evidence or indication of fraud",
-    "claimant_emotion": "Distressed",
-    "reason_for_emotion": "The claimant reported being involved in a car accident and expressed concern about the damage to their vehicle",
-    "claim_summary": "The policyholder, Bugs Bunny, reported a car accident where he was rear-ended while stopped at a red light. Bugs provided communication logs and additional information, including a medical report indicating a soft tissue injury. No evidence or indication of fraud was found.",
-    "further_assessment_required": false,
-    "reason_for_further_assessment": "No further assessment is required as the claim appears to be valid based on the provided information"
+    "inconsistencies": "No inconsistencies found",
+    "claimant_emotion": "Anxious",
+    "reason_for_emotion": "The claimant is reported to have sustained injuries to his back and is anticipated to be anxious about his health and the outcome of his claim",
+    "claim_summary": "Bugs Bunny was rear-ended while stationary at a traffic light, sustaining soft tissue injuries to his back. There is no police report provided yet.",
+    "further_assessment_required": true,
+    "reason_for_further_assessment": "A police report detailing the incident is still needed for a full assessment of the claim"
 }

@@ -10,15 +10,9 @@
             "type": "string",
             "description": "The policy number"
         },
-        "fraud_likelihood": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 3,
-            "description": "The likelihood of the claim being fraudulent with 1 being low and 3 being high"
-        },
-        "reason_for_fraud_rating": {
+        "inconsistencies": {
             "type": "string",
-            "description": "The reasoning behind the fraud rating"
+            "description": "Any inconsistencies in the information provided"
         },
         "claimant_emotion": {
             "type": "string",

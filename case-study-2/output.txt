@@ -1,0 +1,17 @@
+Notable Emerging Cyber Risks, Themes, and Trends:
+
+1. New legal frameworks: There are increasing regulations around communications surveillance and intelligence, potentially impacting cybersecurity strategy, digital communications, and privacy measures.
+2. Increasing use of digital platforms: Leading financial and social media platforms are becoming more digital, requiring ongoing innovation in security and fraud prevention.
+3. Underage users: Social media platforms are under scrutiny for improper management and control over underage users, which could give a rise to legal risks.
+4. Cyber bullying and stalking: There are increasing cases of online harassment, which may necessitate stricter controls, better security measures and education to users.
+5. Increase in advanced cyber crimes: Regions like South Africa are becoming hubs for cybercrime, pointing to a need for stronger international security measures.
+6. Evolution of fraud schemes: As technology evolves, so do the methods employed by online criminals, necessitating continuous innovation in methods for identifying and preventing potential threat.
+7. Artificial intelligence concerns: There are growing concerns about the use of AI chatbots in workplaces due to potential misuse, indicating a future requirement for regulatory measures and enhanced security.
+
+Summary:
+
+Emerging cyber risks are characterized by a diverse set of themes, including regulatory changes, technological evolution, cybercrime sophistication, increased digital platform use, and growing AI technology concerns. New laws are being introduced that require advanced security measures, particularly for non-governmental entities and digital platforms. These regulations aim to better manage surveillance, privacy, and possibly control the demographic accessing these platforms. 
+
+Simultaneously, the rise in cybercrime activities requires continuous innovation in identification and prevention methods. The evolution of online criminal activities such as fraud, cyberbullying, and sophisticated cyberattacks presents an ever-increasing threat. 
+
+Therefore, the Board needs to consider focusing on proactive security measures, incorporating AI responsibly, and investing in cutting-edge fraud prevention tools while constantly updating its users about potential risks. Additionally, the rise in AI use throughout workplaces presents ethical and security concerns that will require our careful attention moving forward. Finally, we must remain vigilant about regulatory compliance, while also anticipating and learning from the changing cybercrime landscape.
