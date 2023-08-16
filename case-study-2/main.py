@@ -6,10 +6,6 @@ from pathlib import Path
 import openai
 import requests
 
-# set some paths
-WEATHER_NEWS_DIR: Path = Path().cwd() / "weather-news"
-WEATHER_NEWS_DIR.mkdir(parents=True, exist_ok=True)
-
 
 # get env vars
 def get_env_variable(name: str) -> str:
@@ -19,13 +15,10 @@ def get_env_variable(name: str) -> str:
     return value
 
 
-def main() -> None:
-    OPENAI_API_KEY: str = get_env_variable("OPENAI_API_KEY")
-    GOOGLE_API_KEY: str = get_env_variable("GOOGLE_CUSTOMSEARCH_API_KEY")
-    GOOGLE_CX: str = get_env_variable("GOOGLE_CUSTOMSEARCH_CX_KEY")
-
-    openai.api_key = OPENAI_API_KEY
-
+# news scraper
+def get_news(
+    google_cx: str, google_api_key: str, save_dir: Path
+) -> tuple[list[str], list[str]]:
     # define search terms
     must_include_search_terms: list[str] = [
         '"cybersecurity risk"',
@@ -58,8 +51,8 @@ def main() -> None:
     search_url: str = "https://www.googleapis.com/customsearch/v1"
     params: dict[str, str | int] = {
         "q": q,
-        "cx": GOOGLE_CX,
-        "key": GOOGLE_API_KEY,
+        "cx": google_cx,
+        "key": google_api_key,
         "num": 10,  # number of results per page
         "lr": "lang_en",  # limit results to English language
         "filter": 1,  # duplicate content filter
@@ -69,7 +62,7 @@ def main() -> None:
     }
 
     # get top 10 results
-    WEATHER_NEWS_DIR.mkdir(parents=True, exist_ok=True)
+    save_dir.mkdir(parents=True, exist_ok=True)
 
     search_results: list[dict] = []
     try:
@@ -78,7 +71,7 @@ def main() -> None:
         search_results = search_response.json()["items"]
         # dump results
         with open(
-            WEATHER_NEWS_DIR / f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json",
+            save_dir / f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json",
             "w",
         ) as f:
             json.dump(search_results, f)
@@ -95,11 +88,15 @@ def main() -> None:
         except Exception as e:
             print(f"Error occurred while processing article {article['link']}: {e}")
 
-    USER_PROMPT: str = "\n".join(
+    return titles, descriptions
+
+
+def summary_prompt(titles: list[str], descriptions: list[str]) -> str:
+    user_prompt: str = "\n".join(
         [f"{title}: {description}" for title, description in zip(titles, descriptions)]
     )
 
-    SYSTEM_PROMPT: str = """
+    system_prompt: str = """
     I am a risk analyst for a large insurance company. I am tasked with
     identifying emerging cyber risks that could impact our business.
     I have collected snippets of a series of news articles.
@@ -113,19 +110,114 @@ def main() -> None:
     This summary will be included in a report to the Board of Directors.
     """
 
-    gpt_response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[
-            {
-                "role": "user",
-                "content": SYSTEM_PROMPT,
-            },
-            {"role": "user", "content": USER_PROMPT},
-        ],
+    # first get the summary
+    summary: str = (
+        openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {
+                    "role": "user",
+                    "content": system_prompt,
+                },
+                {"role": "user", "content": user_prompt},
+            ],
+        )
+        .choices[0]
+        .message.content
     )
 
-    print(gpt_response.choices[0].message.content)  # type: ignore
+    with open("summary.txt", "w") as f:
+        f.write(summary)
+
+    return summary
+
+
+def action_points_prompt(summary: str) -> str:
+    follow_up_prompt: str = f"""
+    List three action points that the Board should consider in order of priority.
+    List not more than three points.
+    Seperate each action point with "\n".
+    Each action point should be a single complete sentence.
+
+    For example, if the summary states that "the Board should consider cyber
+    security providers", then the action point would be "Provide a high-level
+    project plan to discover and evaluate cyber security providers, including
+    some information on how to evaluate them."
+    """
+
+    action_points: str = (
+        openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[
+                {"role": "user", "content": summary},
+                {
+                    "role": "user",
+                    "content": follow_up_prompt,
+                },
+            ],
+        )
+        .choices[0]
+        .message.content
+    )
+
+    with open("action_points.txt", "w") as f:
+        f.write(action_points)
+
+    return action_points
+
+
+def fulfill_actions_prompt(action_points: str) -> None:
+    initial_instruction: str = """
+    Produce a project plan for the following action point.
+    """
+
+    action_points: list[str] = action_points.split("\n")
+    for i, action_point in enumerate(action_points):
+        action: str = (
+            openai.ChatCompletion.create(
+                model="gpt-4",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": initial_instruction,
+                    },
+                    {
+                        "role": "user",
+                        "content": action_point,
+                    },
+                ],
+            )
+            .choices[0]
+            .message.content
+        )
+        print(f"{datetime.now()} - action {i} processed.")
+        with open(f"action_{i}.txt", "w") as f:
+            f.write(action)
+
+
+def main() -> None:
+    titles, descriptions = get_news(
+        google_cx=get_env_variable("GOOGLE_CUSTOMSEARCH_CX_KEY"),
+        google_api_key=get_env_variable("GOOGLE_CUSTOMSEARCH_API_KEY"),
+        save_dir=Path().cwd() / "news",
+    )
+
+    # first get the summary
+    summary: str = summary_prompt(titles, descriptions)
+    print(f"{datetime.now()} - summary produced.")
+
+    # then process the summary
+    action_points: str = action_points_prompt(summary)
+    print(f"{datetime.now()} - action points produced.")
+
+    # finally, for each action point, ask GPT to fulfill it
+    fulfill_actions_prompt(action_points)
+    print(f"{datetime.now()} - actions fulfilled.")
 
 
 if __name__ == "__main__":
+    OPENAI_API_KEY: str = get_env_variable("OPENAI_API_KEY")
+
+    openai.api_key = OPENAI_API_KEY
+
     main()
