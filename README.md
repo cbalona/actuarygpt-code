@@ -13,6 +13,8 @@ engagements. Rather, it is intended to provide a tool to assist claims handlers 
 
 In this case study GPT 4 summarises a collection of news snippets to identify emerging cyber risks. The script conducts an automated custom Google Search for recent articles using a list of search terms. It extracts the metadata of the search results and uses `GPT-4` to generate a detailed summary of the notable emerging cyber risks, themes, and trends identified.
 
+Following this, `GPT-4` is asked to produce a list of action points from the summary. Each action point is then fed into GPT-4 again to produce project plans to fulfil the action points.
+
 ## Case Study 3: Regulatory Knowledgebase
 
 As described in the paper, LLMs are not able to digest large volumes of regulatory documents so in this case study a knowledgebase of regulatory documents is constructed using vector embeddings of their contents.

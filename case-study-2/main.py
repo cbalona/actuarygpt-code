@@ -62,8 +62,6 @@ def get_news(
     }
 
     # get top 10 results
-    save_dir.mkdir(parents=True, exist_ok=True)
-
     search_results: list[dict] = []
     try:
         search_response: requests.Response = requests.get(search_url, params=params)
@@ -71,7 +69,7 @@ def get_news(
         search_results = search_response.json()["items"]
         # dump results
         with open(
-            save_dir / f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json",
+            Path(save_dir) / f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json",
             "w",
         ) as f:
             json.dump(search_results, f)
@@ -91,7 +89,7 @@ def get_news(
     return titles, descriptions
 
 
-def summary_prompt(titles: list[str], descriptions: list[str]) -> str:
+def summary_prompt(titles: list[str], descriptions: list[str], save_dir: str) -> str:
     user_prompt: str = "\n".join(
         [f"{title}: {description}" for title, description in zip(titles, descriptions)]
     )
@@ -126,13 +124,13 @@ def summary_prompt(titles: list[str], descriptions: list[str]) -> str:
         .message.content
     )
 
-    with open("summary.txt", "w") as f:
+    with open(Path(save_dir) / "summary.txt", "w") as f:
         f.write(summary)
 
     return summary
 
 
-def action_points_prompt(summary: str) -> str:
+def action_points_prompt(summary: str, save_dir: Path) -> str:
     follow_up_prompt: str = f"""
     List three action points that the Board should consider in order of priority.
     List not more than three points.
@@ -160,13 +158,13 @@ def action_points_prompt(summary: str) -> str:
         .message.content
     )
 
-    with open("action_points.txt", "w") as f:
+    with open(Path(save_dir) / "action_points.txt", "w") as f:
         f.write(action_points)
 
     return action_points
 
 
-def fulfill_actions_prompt(action_points: str) -> None:
+def fulfill_actions_prompt(action_points: str, save_dir: Path) -> None:
     initial_instruction: str = """
     Produce a project plan for the following action point.
     """
@@ -191,27 +189,30 @@ def fulfill_actions_prompt(action_points: str) -> None:
             .message.content
         )
         print(f"{datetime.now()} - action {i} processed.")
-        with open(f"action_{i}.txt", "w") as f:
+        with open(Path(save_dir) / f"action_{i}.txt", "w") as f:
             f.write(action)
 
 
 def main() -> None:
+    Path("news").mkdir(parents=True, exist_ok=True)
+    Path("output").mkdir(parents=True, exist_ok=True)
+
     titles, descriptions = get_news(
         google_cx=get_env_variable("GOOGLE_CUSTOMSEARCH_CX_KEY"),
         google_api_key=get_env_variable("GOOGLE_CUSTOMSEARCH_API_KEY"),
-        save_dir=Path().cwd() / "news",
+        save_dir="news",
     )
 
     # first get the summary
-    summary: str = summary_prompt(titles, descriptions)
+    summary: str = summary_prompt(titles, descriptions, save_dir="output")
     print(f"{datetime.now()} - summary produced.")
 
     # then process the summary
-    action_points: str = action_points_prompt(summary)
+    action_points: str = action_points_prompt(summary, save_dir="output")
     print(f"{datetime.now()} - action points produced.")
 
     # finally, for each action point, ask GPT to fulfill it
-    fulfill_actions_prompt(action_points)
+    fulfill_actions_prompt(action_points, save_dir="output")
     print(f"{datetime.now()} - actions fulfilled.")
 
 
